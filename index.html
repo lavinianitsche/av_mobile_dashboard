@@ -3,28 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>media de notas</title>
-
+    <title>Dashboard de Notas</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <div class="container_principal">
 
-    <label for="">nome do aluno</label> <br>
-    <input type="text" id="nome"> <br><br>
+        <div class="coluna_dashboard">
+            <div class="quadrado_roxo">
+                <h1><strong>Dashboard de Notas</strong></h1>
+                
+                <label for="">nome do aluno</label> <br>
+                <input type="text" id="nome"> <br><br>
+                
+                <label for="">nota 1º trimestre</label> <br>
+                <input type="text" id="notau"> <br><br>
+                
+                <label for="">nota 2º trimestre</label> <br>
+                <input type="text" id="notad"> <br><br>
+                
+                <label for="">nota 3º trimestre</label> <br>
+                <input type="text" id="notat"> <br><br>
+                
+                <label for="">deseja continuar? s/n</label> <br>
+                <input type="text" id="resposta"> <br><br>
+                
+                <button type="button" onclick="calcular()">calcular media</button> <br><br>
+            </div>
+        </div>
+        
+        <div class="coluna_resultados">
+            <h1><strong>Resultados</strong></h1>
+            <div id="lista_result" class="painel_resultados"></div>
+        </div>
 
-    <label for="">nota 1º tri</label> <br>
-    <input type="text" id="notau"> <br><br>
-
-    <label for="">nota 2º tri</label> <br>
-    <input type="text" id="notad"> <br><br>
-
-    <label for="">nota 3º tri</label> <br>
-    <input type="text" id="notat"> <br><br>
-    
-    <label for="">deseja continuar? s/n</label> <br>
-    <input type="text" id="resposta"> <br><br>
-
-    <button type="button" onclick="calcular()">calcular media</button> <br><br>
-
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>

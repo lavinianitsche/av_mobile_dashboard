@@ -21,24 +21,27 @@ function calcular() {
         console.log("3º tri: " + tri_tres.value);
 
         if (isNaN(t1) || isNaN(t2) || isNaN(t3)) {
-            alert("por favor, preencha todas as notas corretamente!");
+            alert("por favor, preencha tudo corretamente!");
             return;
         }
 
         let media = (t1 + t2 + t3) / 3; // calculo da media
-
-        let situacao = "";
-        
-        if (media >= 60) {
-            situacao = "aprovado";
-        } else {
-            situacao = "reprovado";
-        }
+        let situacao = media >= 60 ? "aprovado" : "reprovado";
+        let cor = situacao === "aprovado" ? "rgb(105, 209, 127)" : "rgb(255, 59, 59)";
 
         // criar elemento de texto para exibir o resultado na tela
         const div_result = document.createElement("div");
         div_result.innerHTML = `<p><strong> aluno:</strong> ${name} | <strong>media:</strong> ${media.toFixed(2)} | <strong>resultado:</strong> ${situacao} </p>`; // interpolação
-        document.body.appendChild(div_result);
+        div_result.style.backgroundColor = cor;
+        div_result.style.color = "white";
+        div_result.style.padding = "10px";
+        div_result.style.borderRadius = "8px";
+        div_result.style.marginTop = "20px";
+        div_result.style.fontSize = "16px";
+        div_result.style.width = "350px";
+        div_result.style.textAlign = "center";
+
+        document.getElementById("lista_result").appendChild(div_result);
 
         // verificar resposta s/n
         continuar = resposta.value.charAt(0).toLowerCase(); // charAt = pega primeiro caractere do texto
