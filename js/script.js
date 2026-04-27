@@ -50,7 +50,7 @@ function calcular() {
 
         let media = (t1 + t2 + t3) / 3; // calculo da media
         let situacao = media >= 60 ? "aprovado" : "reprovado";
-        let cor = situacao === "aprovado" ? "rgb(105, 209, 127)" : "rgb(255, 59, 59)";
+        let cor = situacao === "aprovado" ? "rgb(68, 172, 91)" : "rgb(204, 31, 31)";
 
         // criar elemento de texto para exibir o resultado na tela
         const div_result = document.createElement("div");

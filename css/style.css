@@ -31,6 +31,7 @@ body {
     margin: 0 0 20px 0;
     font-size: 20px;
     text-align: center;
+
 }
 
 /* Container que vai receber os resultados - empilhados verticalmente */
@@ -41,6 +42,7 @@ body {
     max-height: 600px;
     overflow-y: auto;
     padding-right: 10px;
+    margin-left: 68px;
 }
 
 /* Mantém seu estilo original do quadrado-roxo */
