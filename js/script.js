@@ -20,8 +20,31 @@ function calcular() {
         let t3 = parseFloat(tri_tres.value);
         console.log("3º tri: " + tri_tres.value);
 
+        // verificar valores verdadeiros
+        if (name === "") {
+            alert("erro: nome não pode estar vazio");
+            nome.focus();
+            return;
+        }
+        
+        if (name.length < 3) { // length para verificar quantidade de caracteres da string
+            alert("erro: nome deve ter no mínimo 3 letras");
+            nome.focus();
+            return;
+        }
+        
         if (isNaN(t1) || isNaN(t2) || isNaN(t3)) {
-            alert("por favor, preencha tudo corretamente!");
+            alert("erro: por favor, preencha todas as notas corretamente");
+            return;
+        }
+        
+        if (t1 < 0 || t2 < 0 || t3 < 0) {
+            alert("erro: as notas devem ser maiores ou iguais a zero");
+            return;
+        }
+        
+        if (t1 > 100 || t2 > 100 || t3 > 100) {
+            alert("erro: as notas não podem ser maiores que 100");
             return;
         }
 
@@ -54,8 +77,7 @@ function calcular() {
             tri_tres.value = "";
             resposta.value = "";
 
-            // dar o foco no nome para a próxima digitação
-            nome.focus();
+            nome.focus(); // dar o foco no nome para a próxima digitação
             break;
             // break é necessário aqui pois em ambiente web, o 'do.. while' não pode pausar a CPU esperando o usuário digitar
             // ele processa a entrada atual e libera para a próxima interação do botão
